@@ -1,0 +1,102 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.popup {
+  /*background-color: red;*/
+  width: 500px;
+  height: 350px;
+}
+
+.header {
+  background-color: #282828;
+  color: white;
+}
+
+.header h3 {
+  font-weight: 200;
+  font-family: 'Vollkorn';
+  letter-spacing: 3px;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  padding: 15px;
+  margin: 0;
+}
+
+.title a {
+  text-decoration: none;
+  color: white;
+}
+
+#new-recipe {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+}
+
+.thick-txt-bx{
+  height: 20px;
+  width: 100%;
+}
+
+.categories {
+  -webkit-appearance: menulist-button;
+  height: 20px;
+}
+
+.submit-recipe {
+  /*-webkit-appearance: button;*/
+  height: 30px;
+  border-radius: 7px;
+}
+
+.logged-out {
+  margin: 50px auto auto auto;
+  text-align: center;
+}
+
+.chefboard-link {
+  margin: 80px;
+  color: #282828;
+  text-decoration: none;
+  font-weight: 200;
+  font-family: 'Vollkorn';
+  letter-spacing: 3px;
+  padding: auto;
+}
+
+.chefboard-redirect:hover {
+  color: #282828;
+  text-decoration: none;
+}
+
+.chefboard-redirect:visited {
+  color: #282828;
+}
+
+.scraped-images {
+  text-align: center;
+  width: 65%;
+  margin: auto;
+
+}
+
+.scraped-images img {
+  width: 45%;
+  margin: auto 2% 2% 2%;
+}
+
+.successful-pin {
+  width: 70%;
+  margin: 60px auto auto auto;
+  text-align: center;
+  /*line-height: 50%;*/
+}
+
+.success {
+  margin-top: 10%;
+ }
