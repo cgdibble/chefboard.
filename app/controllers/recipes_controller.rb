@@ -23,9 +23,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     category = category_params[:category] || "Appetizers"
     @recipe.category_id = Category.get_category_id(category)
+
     @recipe.tag_string = tag_params[:tags]
     tag_array = @recipe.tag_string.split(',')
-
     tag_array.each do |tag|
       stripped_tag = tag.strip
       if Tag.find_by(name: tag) == nil
