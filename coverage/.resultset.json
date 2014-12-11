@@ -440,15 +440,52 @@
         1,
         null
       ],
+      "/Users/megsandman/Desktop/chefboard./spec/models/recipe_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/megsandman/Desktop/chefboard./app/models/recipe.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/megsandman/Desktop/chefboard./spec/models/user_spec.rb": [
         1,
         null,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
         2,
         2,
         2,
         2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -617,21 +654,10 @@
         null,
         null,
         null,
-        1,
-        null,
-        0,
         null,
         null,
-        0,
         null,
         null,
-        null
-      ],
-      "/Users/megsandman/Desktop/chefboard./app/models/recipe.rb": [
-        1,
-        1,
-        1,
-        1,
         null,
         null,
         null,
@@ -652,6 +678,6 @@
         null
       ]
     },
-    "timestamp": 1418332646
+    "timestamp": 1418334995
   }
 }
