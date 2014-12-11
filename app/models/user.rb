@@ -137,8 +137,8 @@ Recipe.create(
 class User < ActiveRecord::Base
   has_many :recipes
 
-  # validates :email, :password, presence: true
-  # validates  :email, uniqueness: true
+  validates :email, :name, :uid, presence: true
+  validates  :email, uniqueness: true
 
   def self.omniauth(auth)
     if User.find_by(uid: auth.uid) == nil
@@ -146,6 +146,7 @@ class User < ActiveRecord::Base
         provider: auth.provider,
         uid: auth.uid,
         name: auth.info.name,
+        email: auth.info.email,
         image: auth.info.image,
         token: auth.credentials.token,
         expires_at: Time.at(auth.credentials.expires_at),
@@ -155,12 +156,8 @@ class User < ActiveRecord::Base
       RECIPE_SEED.each do |recipe|
         u.recipes << recipe
       end
-      p "*" * 50
-      p user.id
     else
       user = User.find_by(uid: auth.uid)
-      p "^" * 50
-      p user.id
     end
 
   end
@@ -173,8 +170,4 @@ class User < ActiveRecord::Base
       return User.find(session[:user_id]).uid
     end
   end
-
-
-
-
 end
