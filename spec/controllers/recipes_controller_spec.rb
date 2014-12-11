@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipesController, :type => :controller do
   before :each do
-    user = User.create(name: "charlie", uid: '10100684954327834')
+    user = User.create(name: "charlie", uid: '10100684954327834', email: "charlie@charlie.com")
     Category.create(name: "Entree")
     user.recipes.create(title: "title", source_url: "", img_url: "", body: nil, tag_string: "", category: Category.first)
   end
@@ -14,7 +14,7 @@ RSpec.describe RecipesController, :type => :controller do
       expect(response).to be_success
     end
     it "returns recipes as JSON" do
-      user = User.create(name: "charlie", uid: '10100684954327834')
+      user = User.create(name: "charlie", uid: '10100684954327834', email: "charlie@charlie.com")
       Category.create(name: "Entree")
       user.recipes.create(title: "title", source_url: "", img_url: "", body: nil, tag_string: "", category: Category.first)
 

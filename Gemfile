@@ -41,7 +41,7 @@ end
 gem 'simplecov', :require => false, :group => :test
 
 group :test do
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'

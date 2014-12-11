@@ -3582,3 +3582,648 @@ Redirected to http://test.host/login
 Filter chain halted as :authenticate rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
   [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "source_url" varchar(255), "img_url" varchar(255), "body" varchar(255), "tag_string" varchar(255), "category_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "recipes_tags" ("recipe_id" integer NOT NULL, "tag_id" integer NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "image" varchar(255), "token" varchar(255), "expires_at" datetime, "created_at" datetime, "updated_at" datetime, "email" varchar(255)) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141211210116')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141128193928')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141128194057')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141128194116')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141128194126')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141128201338')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:05:52.197975"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:05:52.197975"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:05:52.206723"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:05:52.206723"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:05:52.209720"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:05:52.209720"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:05:52.212916"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:05:52.212916"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:05:52.215689"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:05:52.215689"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:05:52.218315"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:05:52.218315"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:05:52.221767"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:05:52.221767"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:05:52.224376"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:05:52.224376"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:05:52.227594"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:05:52.227594"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:05:52.231392"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:05:52.231392"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:05:52.235129"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:05:52.235129"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:05:52.238217"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:05:52.238217"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:05:52.241026"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:05:52.241026"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:05:52.243631"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:05:52.243631"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:05:52.246172"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:05:52.246172"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:05:52.249009"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:05:52.249009"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:05:52.846936"], ["name", "Entree"], ["updated_at", "2014-12-11 21:05:52.846936"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:05:52.870348"], ["name", "Entree"], ["updated_at", "2014-12-11 21:05:52.870348"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:11:13.655782"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:11:13.655782"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:11:13.663951"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:11:13.663951"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:11:13.666874"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:11:13.666874"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:11:13.669494"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:11:13.669494"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:11:13.672037"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:11:13.672037"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:11:13.675243"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:11:13.675243"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:11:13.678043"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:11:13.678043"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:11:13.680681"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:11:13.680681"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:11:13.683338"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:11:13.683338"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:11:13.686245"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:11:13.686245"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:11:13.688951"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:11:13.688951"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:11:13.691619"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:11:13.691619"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:11:13.694182"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:11:13.694182"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:11:13.697000"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:11:13.697000"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:11:13.700759"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:11:13.700759"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:11:13.705655"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:11:13.705655"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:11:14.315799"], ["name", "Entree"], ["updated_at", "2014-12-11 21:11:14.315799"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:11:14.336249"], ["name", "Entree"], ["updated_at", "2014-12-11 21:11:14.336249"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:12:46.896518"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:12:46.896518"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:12:46.907525"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:12:46.907525"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:12:46.912137"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:12:46.912137"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:12:46.917304"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:12:46.917304"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:12:46.921108"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:12:46.921108"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:12:46.924305"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:12:46.924305"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:12:46.927935"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:12:46.927935"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:12:46.931339"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:12:46.931339"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:12:46.934222"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:12:46.934222"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:12:46.937931"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:12:46.937931"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:12:46.941088"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:12:46.941088"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:12:46.943955"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:12:46.943955"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:12:46.947629"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:12:46.947629"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:12:46.950677"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:12:46.950677"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:12:46.955221"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:12:46.955221"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:12:46.958338"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:12:46.958338"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-11 21:12:46.993706"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:12:46.993706"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.2ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-11 21:12:47.002884"], ["name", "Entree"], ["updated_at", "2014-12-11 21:12:47.002884"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:12:47.028444"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:12:47.028444"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-11 21:12:47.035640"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:12:47.035640"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:12:47.038698"], ["name", "Entree"], ["updated_at", "2014-12-11 21:12:47.038698"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-12-11 21:12:47.041861"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:12:47.041861"], ["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:13:00.693108"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:13:00.693108"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:13:00.703905"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:13:00.703905"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:13:00.708537"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:13:00.708537"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:13:00.713025"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:13:00.713025"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:13:00.716216"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:13:00.716216"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:13:00.719230"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:13:00.719230"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:13:00.722717"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:13:00.722717"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:13:00.725641"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:13:00.725641"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:13:00.728569"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:13:00.728569"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:13:00.731641"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:13:00.731641"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:13:00.736356"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:13:00.736356"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:13:00.740355"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:13:00.740355"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:13:00.744338"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:13:00.744338"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:13:00.748086"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:13:00.748086"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:13:00.750744"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:13:00.750744"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:13:00.753312"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:13:00.753312"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-11 21:13:00.785720"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:13:00.785720"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-11 21:13:00.793798"], ["name", "Entree"], ["updated_at", "2014-12-11 21:13:00.793798"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:13:00.813990"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:13:00.813990"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-11 21:13:00.822677"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:13:00.822677"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:13:00.826917"], ["name", "Entree"], ["updated_at", "2014-12-11 21:13:00.826917"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-12-11 21:13:00.832407"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:13:00.832407"], ["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:14:36.919655"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:14:36.919655"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:14:36.927990"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:14:36.927990"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:14:36.930755"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:14:36.930755"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:14:36.933592"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:14:36.933592"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:14:36.936350"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:14:36.936350"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:14:36.939726"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:14:36.939726"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:14:36.942387"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:14:36.942387"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:14:36.945063"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:14:36.945063"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:14:36.947719"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:14:36.947719"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:14:36.950673"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:14:36.950673"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:14:36.953468"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:14:36.953468"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:14:36.956095"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:14:36.956095"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:14:36.958818"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:14:36.958818"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:14:36.961669"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:14:36.961669"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:14:36.964494"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:14:36.964494"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:14:36.967184"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:14:36.967184"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-11 21:14:37.000769"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:14:37.000769"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.6ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-11 21:14:37.011129"], ["name", "Entree"], ["updated_at", "2014-12-11 21:14:37.011129"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:14:37.109816"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:14:37.109816"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-11 21:14:37.116413"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:14:37.116413"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:14:37.118614"], ["name", "Entree"], ["updated_at", "2014-12-11 21:14:37.118614"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-12-11 21:14:37.121749"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:14:37.121749"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:16:44.174078"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:16:44.174078"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:16:44.191441"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:16:44.191441"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:16:44.197821"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:16:44.197821"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:16:44.200986"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:16:44.200986"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:16:44.203848"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:16:44.203848"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:16:44.206494"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:16:44.206494"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:16:44.210270"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:16:44.210270"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:16:44.213539"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:16:44.213539"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:16:44.216411"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:16:44.216411"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:16:44.219191"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:16:44.219191"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:16:44.222427"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:16:44.222427"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:16:44.225552"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:16:44.225552"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:16:44.228722"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:16:44.228722"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:16:44.232063"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:16:44.232063"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:16:44.236011"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:16:44.236011"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:16:44.239176"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:16:44.239176"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-11 21:16:44.270336"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:16:44.270336"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.5ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-11 21:16:44.280586"], ["name", "Entree"], ["updated_at", "2014-12-11 21:16:44.280586"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:16:44.373772"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:16:44.373772"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-11 21:16:44.384896"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:16:44.384896"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:16:44.389062"], ["name", "Entree"], ["updated_at", "2014-12-11 21:16:44.389062"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-12-11 21:16:44.393439"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:16:44.393439"], ["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.2ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:17:25.763342"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48297/full/cranberry_newton_bars_1.jpg?1415581465"], ["source_url", "http://food52.com/recipes/31923-cranberry-newton-bars"], ["tag_string", "cranberry, bars"], ["title", "Cranberry Newton Bars"], ["updated_at", "2014-12-11 21:17:25.763342"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:17:25.769519"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/cranberry-pie-with-thick-pecan-crumble.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/cranberry-pie-with-thick-pecan-crumble/"], ["tag_string", "pie, yum, cranberry"], ["title", "Cranberry pie with thick pecan crumble"], ["updated_at", "2014-12-11 21:17:25.769519"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:17:25.772170"], ["img_url", "https://farm8.staticflickr.com/7580/15694874477_c02de54479_b.jpg"], ["source_url", "http://food52.com/blog/11824-the-mid-winter-margarita"], ["tag_string", "yum, party, margarita"], ["title", "Mid-Winter Margarita"], ["updated_at", "2014-12-11 21:17:25.772170"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:17:25.774766"], ["img_url", "http://smittenkitchen.com/wp-content/uploads/crispy-sweet-potato-roast.jpg"], ["source_url", "http://smittenkitchen.com/blog/2014/11/crispy-sweet-potato-roast/"], ["tag_string", "yum, thanksgiving"], ["title", "Crispy Sweet Potato Roast"], ["updated_at", "2014-12-11 21:17:25.774766"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 6], ["created_at", "2014-12-11 21:17:25.777515"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48732/full/roasted_squash_and_grape_salad05.jpg?1416365978"], ["source_url", "http://food52.com/recipes/32152-roasted-grape-and-butternut-squash-salad-with-kale-and-parmesan"], ["tag_string", "health, squash, parmesan, yum"], ["title", "Roasted Grape and Butternut Squash Salad with Kale and Parmesan"], ["updated_at", "2014-12-11 21:17:25.777515"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:17:25.780896"], ["img_url", "http://www.sacramentostreet.com/wp-content/uploads/2014/11/Pumpkin_Cheesecake_3.jpg"], ["source_url", "http://www.sacramentostreet.com/2014/11/on-the-menu-pumpkin-cheesecake-squares-with-toasted-marshmallow-frosting/"], ["tag_string", "bars, pumpkin"], ["title", "Pumpkin Cheescake Squares"], ["updated_at", "2014-12-11 21:17:25.780896"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:17:25.783499"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48245/full/beauty1.jpg?1415373989"], ["source_url", "http://food52.com/recipes/31899-homemade-cheez-its"], ["tag_string", "snacks, cheese"], ["title", "Homemade Cheez-Its"], ["updated_at", "2014-12-11 21:17:25.783499"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 7], ["created_at", "2014-12-11 21:17:25.786054"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48228/full/15720424702_9f34c06f4a_k.jpg?1415300915"], ["source_url", "http://food52.com/recipes/31811-buttermilk-biscuits"], ["tag_string", "biscuits, yum"], ["title", "Buttermilk Biscuits"], ["updated_at", "2014-12-11 21:17:25.786054"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 4], ["created_at", "2014-12-11 21:17:25.788742"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47954/full/2014-1028_how-to-make-cookies-and-cream-bars-127.jpg?1414688880"], ["source_url", "http://food52.com/recipes/31749-cookies-and-cream-bars"], ["tag_string", "bars"], ["title", "Cookies and Cream Bars"], ["updated_at", "2014-12-11 21:17:25.788742"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:17:25.792292"], ["img_url", "http://o.iamafoodblog.com/iamablog/wp-content/uploads/2014/10/pumpkin-ricotta-pancakes-3.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-ricotta-pancake-recipe/"], ["tag_string", "pancakes, pumpkin, ricotta"], ["title", "Pumpkin Ricotta Pancake"], ["updated_at", "2014-12-11 21:17:25.792292"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:17:25.795074"], ["img_url", "http://x.iamafoodblog.com/iamablog/wp-content/uploads/2014/09/psl-1.jpg"], ["source_url", "http://iamafoodblog.com/pumpkin-spice-latte-syrup-recipe/"], ["tag_string", "syrup, pumpkin"], ["title", "Pumpkin Spice Latte Syrup"], ["updated_at", "2014-12-11 21:17:25.795074"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:17:25.797640"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/11/stuffing-cakes-6.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-crispy-stuffing-cakes-with-quail-eggs-recipe/"], ["tag_string", "stuffing, eggs, thanksgiving"], ["title", "Crispy Stuffing Cakes with Quail Eggs"], ["updated_at", "2014-12-11 21:17:25.797640"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 2], ["created_at", "2014-12-11 21:17:25.800816"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/47959/full/2014-1028_sporting-life-cocktail-012.jpg?1414694398"], ["source_url", "http://food52.com/recipes/31751-sporting-life"], ["tag_string", "orange"], ["title", "Sporting Life"], ["updated_at", "2014-12-11 21:17:25.800816"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 3], ["created_at", "2014-12-11 21:17:25.803603"], ["img_url", "http://i.iamafoodblog.com/iamablog/wp-content/uploads/2014/08/raspberry-crumble-pancakes-5.jpg"], ["source_url", "http://iamafoodblog.com/sunday-brunch-raspberry-crumble-pancake-recipe/"], ["tag_string", "raspberry, pancakes"], ["title", "Raspberry Crumble Pancakes"], ["updated_at", "2014-12-11 21:17:25.803603"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 5], ["created_at", "2014-12-11 21:17:25.806373"], ["img_url", "https://d2k9njawademcf.cloudfront.net/indeximages/48193/full/pomegranateflanksteak1.jpg?1415165494"], ["source_url", "http://food52.com/recipes/31870-pomegranate-flank-steak"], ["tag_string", "steak, pomegranate"], ["title", "Pomegranate Flank Steak"], ["updated_at", "2014-12-11 21:17:25.806373"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 4], ["created_at", "2014-12-11 21:17:25.808949"], ["img_url", "http://graphics8.nytimes.com/images/2013/06/19/dining/19PASTRY1_SPAN/19PASTRY1_SPAN-articleLarge-v2.jpg"], ["source_url", "http://www.nytimes.com/2008/07/09/dining/091crex.html?_r=0"], ["tag_string", "cookie, chocolate"], ["title", "Chocolate Chip Cookies"], ["updated_at", "2014-12-11 21:17:25.808949"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-11 21:17:25.837090"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:17:25.837090"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.5ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-11 21:17:25.848396"], ["name", "Entree"], ["updated_at", "2014-12-11 21:17:25.848396"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-12-11 21:17:25.941418"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:17:25.941418"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-11 21:17:25.949640"], ["email", "charlie@charlie.com"], ["name", "charlie"], ["uid", "10100684954327834"], ["updated_at", "2014-12-11 21:17:25.949640"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-11 21:17:25.952137"], ["name", "Entree"], ["updated_at", "2014-12-11 21:17:25.952137"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "img_url", "source_url", "tag_string", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-12-11 21:17:25.955544"], ["img_url", ""], ["source_url", ""], ["tag_string", ""], ["title", "title"], ["updated_at", "2014-12-11 21:17:25.955544"], ["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'charlie@charlie.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCategory Exists (0.1ms)[0m  SELECT  1 AS one FROM "categories"  WHERE "categories"."name" = 'Entree' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-11 21:17:26.487577"], ["email", "a"], ["updated_at", "2014-12-11 21:17:26.487577"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'a' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'a' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m

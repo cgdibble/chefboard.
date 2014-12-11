@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-11T12:55:29-08:00">2014-12-11T12:55:29-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-11T13:17:26-08:00">2014-12-11T13:17:26-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">54.97%</span></span>
+    (<span class="covered_percent"><span class="red">55.43%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.56
+         0.58
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>32</b> files in total.
-    <b>171</b> relevant lines. 
-    <span class="green"><b>94</b> lines covered</span> and
-    <span class="red"><b>77</b> lines missed </span>
+    <b>175</b> relevant lines. 
+    <span class="green"><b>97</b> lines covered</span> and
+    <span class="red"><b>78</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#832baa099a218893a821d6c94dbaccbb5aa328cb" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="red strong">50.0 %</td>
         <td>16</td>
         <td>10</td>
-        <td>10</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -152,12 +152,12 @@
       
       <tr>
         <td class="strong"><a href="#f5bd48cdd8cbdd93c5c4abd756c15b3f1435ffe8" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">27.78 %</td>
-        <td>180</td>
-        <td>18</td>
-        <td>5</td>
-        <td>13</td>
-        <td>0.3</td>
+        <td class="red strong">43.75 %</td>
+        <td>173</td>
+        <td>16</td>
+        <td>7</td>
+        <td>9</td>
+        <td>0.4</td>
       </tr>
       
       <tr>
@@ -363,11 +363,11 @@
       <tr>
         <td class="strong"><a href="#e605451f60f0cfc15f570cc0e3c27811f6856c79" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>1</td>
-        <td>1</td>
+        <td>10</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.6</td>
       </tr>
       
     </tbody>
@@ -389,11 +389,11 @@
         <div class="source_table" id="832baa099a218893a821d6c94dbaccbb5aa328cb">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">50.0 %</span> covered</h4>
     <div>
       <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -436,8 +436,8 @@
           <code class="ruby">  def authenticate</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">    redirect_to login_url unless session[:user_id]</code>
         </li>
@@ -460,26 +460,26 @@
           <code class="ruby">  def set_headers</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
           
           <code class="ruby">    headers[&#39;Access-Control-Allow-Origin&#39;] = &#39;*&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
           
           <code class="ruby">    headers[&#39;Access-Control-Allow-Methods&#39;] = &#39;POST, PUT, DELETE, GET, OPTIONS&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
           
           <code class="ruby">    headers[&#39;Access-Control-Request-Method&#39;] = &#39;*&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
           
           <code class="ruby">    headers[&#39;Access-Control-Allow-Headers&#39;] = &#39;Origin, X-Requested-With, Content-Type, Accept, Authorization&#39;</code>
         </li>
@@ -1679,11 +1679,11 @@
         <div class="source_table" id="f5bd48cdd8cbdd93c5c4abd756c15b3f1435ffe8">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">27.78 %</span> covered</h4>
+    <h4><span class="red">43.75 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <b>16</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -2524,16 +2524,16 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="140">
+        <li class="covered" data-hits="1" data-linenumber="140">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # validates :email, :password, presence: true</code>
+          <code class="ruby">  validates :email, :name, :uid, presence: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="141">
+        <li class="covered" data-hits="1" data-linenumber="141">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # validates  :email, uniqueness: true</code>
+          <code class="ruby">  validates  :email, uniqueness: true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="142">
@@ -2581,190 +2581,148 @@
         <li class="never" data-hits="" data-linenumber="149">
           
           
-          <code class="ruby">        image: auth.info.image,</code>
+          <code class="ruby">        email: auth.info.email,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="150">
           
           
-          <code class="ruby">        token: auth.credentials.token,</code>
+          <code class="ruby">        image: auth.info.image,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="151">
           
           
-          <code class="ruby">        expires_at: Time.at(auth.credentials.expires_at),</code>
+          <code class="ruby">        token: auth.credentials.token,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="152">
           
           
-          <code class="ruby">        )</code>
+          <code class="ruby">        expires_at: Time.at(auth.credentials.expires_at),</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="153">
+        <li class="never" data-hits="" data-linenumber="153">
           
           
-          <code class="ruby">      user.save!</code>
+          <code class="ruby">        )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="154">
           
           
-          <code class="ruby">      u = User.find_by(uid: auth.uid)</code>
+          <code class="ruby">      user.save!</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="155">
           
           
-          <code class="ruby">      RECIPE_SEED.each do |recipe|</code>
+          <code class="ruby">      u = User.find_by(uid: auth.uid)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="156">
           
           
+          <code class="ruby">      RECIPE_SEED.each do |recipe|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="157">
+          
+          
           <code class="ruby">        u.recipes &lt;&lt; recipe</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="157">
+        <li class="never" data-hits="" data-linenumber="158">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="158">
-          
-          
-          <code class="ruby">      p &quot;*&quot; * 50</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="159">
-          
-          
-          <code class="ruby">      p user.id</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="never" data-hits="" data-linenumber="159">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="161">
+        <li class="missed" data-hits="0" data-linenumber="160">
           
           
           <code class="ruby">      user = User.find_by(uid: auth.uid)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="162">
+        <li class="never" data-hits="" data-linenumber="161">
           
           
-          <code class="ruby">      p &quot;^&quot; * 50</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="163">
+        <li class="never" data-hits="" data-linenumber="162">
           
           
-          <code class="ruby">      p user.id</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="164">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="165">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="166">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="167">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="168">
+        <li class="covered" data-hits="1" data-linenumber="165">
           <span class="hits">1</span>
           
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="169">
+        <li class="never" data-hits="" data-linenumber="166">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="170">
+        <li class="missed" data-hits="0" data-linenumber="167">
           
           
           <code class="ruby">    if session[:user_id] == nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="171">
+        <li class="never" data-hits="" data-linenumber="168">
           
           
           <code class="ruby">      return nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="172">
+        <li class="never" data-hits="" data-linenumber="169">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="173">
+        <li class="missed" data-hits="0" data-linenumber="170">
           
           
           <code class="ruby">      return User.find(session[:user_id]).uid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="174">
+        <li class="never" data-hits="" data-linenumber="171">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="175">
+        <li class="never" data-hits="" data-linenumber="172">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="176">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="177">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="178">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="179">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="180">
+        <li class="never" data-hits="" data-linenumber="173">
           
           
           <code class="ruby">end</code>
@@ -4645,8 +4603,8 @@
     <h3>spec/models/user_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>1</b> relevant lines. 
-      <span class="green"><b>1</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4663,46 +4621,52 @@
         <li class="never" data-hits="" data-linenumber="2">
           
           
-          <code class="ruby">__END__</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
-          
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
           <code class="ruby">describe User do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
           <code class="ruby">  context &quot;presence validations&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    it { should validate_presence_of :username }</code>
+          <code class="ruby">    it { should validate_presence_of :name }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
-          
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">    it { should validate_presence_of :email }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    it { should validate_presence_of :password }</code>
+          <code class="ruby">    it { should validate_presence_of :uid }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_uniqueness_of :email }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
