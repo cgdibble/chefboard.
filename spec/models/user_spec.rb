@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  context "presence validations" do
+  context "presence and uniqueness validations" do
     it "is valid with a name, uid, and email" do
       user = User.new(
         name: "Meg",
