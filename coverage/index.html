@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-11T13:56:35-08:00">2014-12-11T13:56:35-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-11T14:00:45-08:00">2014-12-11T14:00:45-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">58.7%</span></span>
+    (<span class="covered_percent"><span class="red">60.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.64
+         0.66
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>33</b> files in total.
-    <b>184</b> relevant lines. 
-    <span class="green"><b>108</b> lines covered</span> and
+    <b>34</b> files in total.
+    <b>190</b> relevant lines. 
+    <span class="green"><b>114</b> lines covered</span> and
     <span class="red"><b>76</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -351,6 +351,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#bf37bf8069c722c7716c6165d47348bc965de74a" class="src_link" title="spec/models/category_spec.rb">spec/models/category_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>8</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>1.4</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#82905b78190e5045cbf8a8b6108852dce15b9276" class="src_link" title="spec/models/model_spec.rb">spec/models/model_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>24</td>
@@ -363,11 +373,11 @@
       <tr>
         <td class="strong"><a href="#8b2a54599dfe2dd02679d2c39d6221209a5400b1" class="src_link" title="spec/models/recipe_spec.rb">spec/models/recipe_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>6</td>
-        <td>6</td>
+        <td>10</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -4380,6 +4390,72 @@
   </pre>
 </div>
       
+        <div class="source_table" id="bf37bf8069c722c7716c6165d47348bc965de74a">
+  <div class="header">
+    <h3>spec/models/category_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe Category do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  context &quot;presence and uniqueness validations&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :name}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_uniqueness_of :name}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="82905b78190e5045cbf8a8b6108852dce15b9276">
   <div class="header">
     <h3>spec/models/model_spec.rb</h3>
@@ -4547,8 +4623,8 @@
     <h3>spec/models/recipe_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4574,37 +4650,43 @@
           <code class="ruby">describe Recipe do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          <code class="ruby">  it { should validate_presence_of :title }</code>
+          <code class="ruby">  context &quot;presence validations&quot; do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should validate_presence_of :category_id }</code>
+          <code class="ruby">    it { should validate_presence_of :title }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should validate_presence_of :source_url }</code>
+          <code class="ruby">    it { should validate_presence_of :category_id }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should validate_presence_of :user_id }</code>
+          <code class="ruby">    it { should validate_presence_of :source_url }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it { should validate_presence_of :user_id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
@@ -4649,7 +4731,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  context &quot;presence validations&quot; do</code>
+          <code class="ruby">  context &quot;presence and uniqueness validations&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
